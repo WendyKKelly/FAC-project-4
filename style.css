@@ -29,109 +29,7 @@
       height: 100%;
       width: 100%;
     }
-    .item-a {
-      grid-area: header;
-    }
-    .item-b {
-      grid-area: main;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-evenly;
-      gap: 10px 20px; 
-      
-    }
-    .child {
-        width: 400px;  
-        height: 400px; 
-        margin: auto;  
-    }
-    
-    .description {
-      max-height: 50px;
-      background: color #000;
-      display: none;
-    }
-    .description2 {
-      max-height: 50px;
-      display: none;
-    }
-    .description3 {
-      max-height: 50px;
-      display: none;
-    }
-    .description4 {
-      max-height: 50px;
-      display: none;
-    }
-    .description5 {
-      max-height: 50px;
-      display: none;
-    }
-    .description6 {
-      max-height: 50px;
-      display: none;
-    }
-
-    .pro-1{
-        width: 400px;  
-        height: 400px; 
-        margin: auto;  
-background-color: transparent;
-    }
-    .pro-2 {
-        width: 400px;  
-        height: 400px; 
-        margin: auto;  
-        background-color: transparent;
-    }
-    .pro-3 {
-        width: 400px;  
-        height: 400px; 
-        margin: auto;  
-        background-color:transparent;
-    }
-    .pro-4 {
-        width: 400px;  
-        height: 400px; 
-        margin: auto;  
-        background-color:transparent;
-    }
-    .pro-5 {
-        width: 400px;  
-        height: 400px; 
-        margin: auto;  
-        background-color: transparent;
-    }
-    .pro-6 {
-        width: 400px;  
-        height: 400px; 
-        margin: auto;  
-        background-color:transparent;
-    }
-    /*.item-c {
-      grid-area: sidebar;
-      @media only screen and ( min-width: 480px ) and ( max-width: 767px ) {
-        /* your css goes here */
-
-    .item-d {
-      grid-area: footer;
-      background-color: #4d4d4d;
-    }
-    
-    .container {
-      display: grid;
-      margin-left: 5%;
-      grid-template-columns: repeat(auto-fit,minmax(clamp(100%/(var(--n) + 1) + 0.1%,(var(--w) - 100vw)*1000,100%),1fr)); /*this */
-      
-    
-      grid-template-rows: auto;
-      grid-template-areas: 
-        "header header header header"
-        "main main main main"
-        "footer footer footer footer";
-    }
+  
   
   
   html, body, p, th, td, li, dd, dt  {
@@ -301,7 +199,25 @@ a:active { color: #0cf; }
     outline: 1px dotted ButtonText;
   }
   
-  
+  .btn{
+    width: 48%;
+    padding: 20px;
+    border-radius: 5px;
+    background: none;
+    border: 1px solid #383838;
+    color: #383838;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 20px 0;
+    text-transform: capitalize;
+}
+
+.cart-btn{
+    margin-right: 2%;
+    background: #383838;
+    color: #fff;
+}
+
   
   fieldset {
     padding: 0.35em 0.75em 0.625em;
@@ -386,3 +302,81 @@ a:active { color: #0cf; }
   [hidden] {
     display: none;
   }
+  /* (A) ENTIRE PAGE */
+#cart-wrap {
+  font-family: arial, sans-serif;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+input.cart, button.cart {
+  font-weight: bold;
+  font-size: 1em;
+  padding: 10px; 
+  border: none;
+  color: #fff;
+  background: #d64107;
+  cursor: pointer;
+}
+
+/* (B) PRODUCTS LIST */
+#cart-products {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+.p-item {
+  padding: 10px;
+  border: 1px solid #aaa;
+  text-align: center;
+}
+.p-name {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.p-img { max-width: 180px; }
+.p-desc {
+  color: #777;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.p-price {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+input.p-add { width: 80%; }
+
+/* (D) CURRENT SHOPPING CART */
+#cart-items {
+  padding: 10px;
+  background: #f1f1f1;
+}
+.c-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.c-name {
+  width: 100%;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+.c-del { width: 20%; }
+.c-qty {
+  width: 75%;
+  font-size: 1em;
+}
+input.c-empty, input.c-checkout {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* (E) RESPONSIVE */
+@media screen AND (max-width: 768px) {
+  #cart-wrap { grid-template-columns: 60% 40%; }
+  #cart-products { grid-template-columns: auto; }
+}
