@@ -9,37 +9,37 @@ var products = {
     123: {
       name : "Banana",
       desc : "banana.",
-      img : "assets/banana.jpg",
+      img : "banana.jpg",
       price : 2
     },
     124: {
       name : "Apple",
       desc : "apple.",
-      img : "assets/apple.jpg",
+      img : "apple.jpg",
       price : 1
     },
     125: {
       name : "Mango",
       desc : "mango.",
-      img : "assets/mango.jpg",
+      img : "mango.jpg",
       price : 6
     },
     126: {
       name : "Orange",
       desc : "orange. ",
-      img : "assets/orange.jpg",
+      img : "orange.jpg",
       price : 8
     },
     127: {
         name : "Guava",
         desc : "guava.",
-        img : "assets/guava.jpg",
+        img : "guava.jpg",
         price : 5
       },
       128: {
         name : "Melon",
         desc : "melon. ",
-        img : "assets/melon.jpg",
+        img : "melon.jpg",
         price : 842
       }
   };

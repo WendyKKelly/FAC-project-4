@@ -52,7 +52,7 @@
   
         // PRODUCT IMAGE
         part = document.createElement("img");
-        part.src = "images/" +p.img;
+        part.src = "assets/" +p.img;
         part.className = "p-img";
         item.appendChild(part);
   
