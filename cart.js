@@ -136,6 +136,7 @@
           // QUANTITY
           part = document.createElement("input");
           part.type = "number";
+          part.min = "10";
           part.value = cart.items[id];
           part.dataset.id = id;
           part.className = "c-qty";
