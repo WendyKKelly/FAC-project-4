@@ -159,7 +159,7 @@
         // CHECKOUT BUTTONS
         item = document.createElement("input");
         item.type = "button";
-        item.value = "Checkout - " + "$" + total;
+        item.value = "Checkout - " + "$" + subtotal;
         item.addEventListener("click", cart.checkout);
         item.className = "c-checkout cart";
         cart.hItems.appendChild(item);
