@@ -2,7 +2,7 @@
 
 const cart = {
     product : null, // products list
-    hItems: null, // current cart (html)
+    current: null, // current cart (html)
     items: {}, // items in cart 
 
     // local storage
@@ -30,7 +30,7 @@ load : function () {
     init : function () {
      
         cart.product = document.getElementById("cart-products");
-        cart.hItems = document.getElementById("cart-items");
+        cart.current = document.getElementById("cart-items");
         // create elements
 
 
@@ -86,7 +86,7 @@ load : function () {
 // list current cart items  (html)
 list : function () {
  // reset
- cart.hItems.innerHTML = "";
+ cart.current.innerHTML = "";
  let item, part, pdt;
  let empty = true;
  for (let key in cart.items) {
@@ -97,7 +97,7 @@ list : function () {
  if (empty) {
    item = document.createElement("div");
    item.innerHTML = "Cart is empty";
-   cart.hItems.appendChild(item);
+   cart.current.appendChild(item);
  }
 
  // create list items in cart
@@ -108,7 +108,7 @@ list : function () {
      p = products[id];
      item = document.createElement("div");
      item.className = "c-item";
-     cart.hItems.appendChild(item);
+     cart.current.appendChild(item);
 
      // cart name
      part = document.createElement("div");
@@ -146,7 +146,7 @@ list : function () {
    item.value = "Empty";
    item.addEventListener("click", cart.nuke);
    item.className = "c-empty cart";
-   cart.hItems.appendChild(item);
+   cart.current.appendChild(item);
 
    // checkout
    item = document.createElement("input");
@@ -154,7 +154,7 @@ list : function () {
    item.value = "Checkout - " + "$" + total;
    item.addEventListener("click", cart.checkout);
    item.className = "c-checkout cart";
-   cart.hItems.appendChild(item);
+   cart.current.appendChild(item);
  }
 },
 
