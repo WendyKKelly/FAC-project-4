@@ -1,8 +1,8 @@
  // omg you can put  functions as items inside an object
 
 const cart = {
-    fruit : null, // products list
-    current: null, // current cart (html)
+    hPdt : null, // products list
+    hItems: null, // current cart (html)
     items: {}, // items in cart 
 
     // local storage
@@ -31,12 +31,12 @@ const cart = {
     init : () => {
         // a little confused by this part
 
-        cart.fruit = document.getElementById("cart-products");
-        cart.current = document.getElementById("cart-items");
+        cart.hPdt = document.getElementById("cart-products");
+        cart.hItems = document.getElementById("cart-items");
 
         // create elements
 
-        cart.fruit.innerHTML = "";
+        cart.hPdt.innerHTML = "";
         let p, item, part;
         for (let id in products) {
 
@@ -44,7 +44,7 @@ const cart = {
             p = products[id];
             item = document.createElement("div");
             item.className = "p-item";
-            cart.fruit.appendChild(item);
+            cart.hPdt.appendChild(item);
 
             // image
 
@@ -95,7 +95,7 @@ const cart = {
 
     list : () => {
 
-        cart.current.innerHTML = "";
+        cart.hItems.innerHTML = "";
         let item, part, pdt;
         let empty = true;
         for (let key in cart.items) {
@@ -105,7 +105,7 @@ const cart = {
         if (empty) {
             item = document.createElement("div");
             item.innerHTML = "Cart is empty";
-            cart.current.appendChild(item);
+            cart.hItems.appendChild(item);
         }
 
         // else list items
@@ -117,7 +117,7 @@ const cart = {
                 p = products[id];
                 item = document.createElement("div");
                 item.className = "c-item";
-                cart.current.appendChild(item);
+                cart.hItems.appendChild(item);
 
                 part = document.createElement("div");
                 part.innerHTML = p.name;
@@ -151,14 +151,14 @@ const cart = {
             item.value = "Empty";
             item.addEventListener("click", cart.nuke);
             item.className = "c-empty cart";
-            cart.current.appendChild(item);
+            cart.hItems.appendChild(item);
 
             item= document.createElement("input");
             item.type = "button";
             item.value = "Checkout -" + "$" + total;
             item.addEventListener("click", cart.checkout);
             item.className = "c-checkout cart";
-            cart.current.appendChild(item);
+            cart.hItems.appendChild(item);
         }
     },
 
