@@ -9,14 +9,14 @@ const cart = {
     //  https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 // save current cart into local storage
     save : function () {
-        cart.items = localStorage.setItem("cart", JSON.stringify(cart.items));
+      localStorage.setItem("cart", JSON.stringify(cart.items));
     },
 // load cart from local Storage
-      load : function () {
-        cart.items = localStorage.getItem("cart");
-        if (cart.items == null) { cart.items = {}; }
-        else { cart.items = JSON.parse(cart.items); }
-      },
+load : function () {
+    cart.items = localStorage.getItem("cart");
+    if (cart.items == null) { cart.items = {}; }
+    else { cart.items = JSON.parse(cart.items); }
+  },
 
     nuke : function () {
       if (confirm("Really?")) {
