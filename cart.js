@@ -70,7 +70,7 @@ load : function () {
    // add to cart
    part = document.createElement("input");
    part.type = "button";
-   part.value = "Add to Cart";
+   part.value = "Want Fruit?";
    part.className = "cart p-add";
    part.onclick = cart.add;
    part.dataset.id = id;
@@ -96,7 +96,7 @@ list : function () {
  // empty cart to begin
  if (empty) {
    item = document.createElement("div");
-   item.innerHTML = "Cart is empty";
+   item.innerHTML = "Buy Something! Add Fruit to Your Cart.";
    cart.current.appendChild(item);
  }
 
