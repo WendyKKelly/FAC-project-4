@@ -104,7 +104,7 @@ const cart = {
         if (empty) {
             item = document.createElement("div");
             item.innerHTML = "Cart is empty";
-            cart.items.appendChild(item);
+            cart.current.appendChild(item);
         }
 
         // else list items
@@ -116,7 +116,7 @@ const cart = {
                 p = products[id];
                 item = document.createElement("div");
                 item.className = "c-item";
-                cart.product.appendChild(item);
+                cart.current.appendChild(item);
 
                 part = document.createElement("div");
                 part.innerHTML = p.img;
@@ -150,14 +150,14 @@ const cart = {
             item.value = "Empty";
             item.addEventListener("click", cart.nuke);
             item.className = "c-empty cart";
-            cart.product.appendChild(item);
+            cart.current.appendChild(item);
 
             item= document.createElement("input");
             item.type = "button";
             item.value = "Checkout -" + "$" + total;
             item.addEventListener("click", cart.checkout);
             item.className = "c-checkout cart";
-            cart.product.appendChild(item);
+            cart.current.appendChild(item);
         }
     },
 
