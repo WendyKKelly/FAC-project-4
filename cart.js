@@ -84,7 +84,7 @@ const cart = {
 
     // list current idtems (in html)
 
-    list : () => {
+    list : function () {
 
         cart.hItems.innerHTML = "";
         let item, part, pdt;
@@ -153,7 +153,7 @@ const cart = {
         }
     },
 
-    add : () => {
+    add : function () {
     if (cart.items[this.dataset.id] == undefined)
 {
     cart.items[this.dataset.id] = 1;
@@ -164,7 +164,7 @@ const cart = {
   cart.list();
 },
 
-change : () => {
+change : function () {
     if (this.value == 0) {
         delete cart.items[this.dataset.id];
      } else {
@@ -175,14 +175,14 @@ change : () => {
     cart.list();
 },
 
-remove : () => {
+remove : function () {
     delete cart.items[this.dataset.id]; 
     cart.save();
     cart.list();
 
 },
 
-checkout : () => {
+checkout : function () {
     alert("woo hoo - you got this far!");
 }
 
