@@ -33,55 +33,49 @@ const cart = {
         cart.hItems = document.getElementById("cart-items");
         // create elements
 
-        cart.hPdt.innerHTML = "";
-        let p, item, part;
-        for (let id in products) {
+ // (C2) DRAW PRODUCTS LIST
+ cart.hPdt.innerHTML = "";
+ let p, item, part;
+ for (let id in products) {
+   // WRAPPER
+   p = products[id];
+   item = document.createElement("div");
+   item.className = "p-item";
+   cart.hPdt.appendChild(item);
 
-            // wrapper
-            p = products[id];
-            item = document.createElement("div");
-            item.className = "p-item";
-            cart.hPdt.appendChild(item);
+   // PRODUCT IMAGE
+   part = document.createElement("img");
+   part.src = "assets/" +p.img;
+   part.className = "p-img";
+   item.appendChild(part);
 
-            // image
+   // PRODUCT NAME
+   part = document.createElement("div");
+   part.innerHTML = p.name;
+   part.className = "p-name";
+   item.appendChild(part);
 
-            part = document.createElement("img");
-            part.src = "assets/" + p-img;
-            part.className = "p-img";
-            item.appendChild(part);
+   // PRODUCT DESCRIPTION
+   part = document.createElement("div");
+   part.innerHTML = p.desc;
+   part.className = "p-desc";
+   item.appendChild(part);
 
-            // name
-            part = document.createElement("div");
-            part.innerHTML = p.name;
-            part.className = "p-name";
-            item.appendChild(part);
+   // PRODUCT PRICE
+   part = document.createElement("div");
+   part.innerHTML = "$" + p.price;
+   part.className = "p-price";
+   item.appendChild(part);
 
-            //description
-
-            part = document.createElement("div");
-            part.innerHTML = p.desc;
-            part.className = "p-desc";
-            item.appendChild(part);
-
-            // price
-
-            part = document.createElement("div");
-            part.innerHTML = "$" + p.price;
-            part.className = "p-price";
-            item.appendChild(part);
-
-            // add to cart
-
-            part = document.createElement("input");
-            part.type = "button";
-            part.value = "Want This Fruit";
-            part.className = "cart p-add";
-            part.onclick = cart.add;
-            part.dataset.id = id;
-            item.appendChild(part);
-        }
-
-        // load cart from previous session ... kind of confused by this
+   // ADD TO CART
+   part = document.createElement("input");
+   part.type = "button";
+   part.value = "Add to Cart";
+   part.className = "cart p-add";
+   part.onclick = cart.add;
+   part.dataset.id = id;
+   item.appendChild(part);
+ }
         cart.load();
 
         cart.list();
