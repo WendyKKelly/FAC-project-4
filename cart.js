@@ -1,4 +1,4 @@
-// omg you can put  functions as items inside an object
+ // omg you can put  functions as items inside an object
 
 const cart = {
     fruit : null, // products list
