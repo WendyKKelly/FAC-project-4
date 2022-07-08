@@ -12,7 +12,7 @@ const cart = {
         localStorage.setItem("cart", JSON.stringify(cart.items));
       },
 
-      read : () => {
+      load : () => {
         cart.items = localStorage.getItem("cart");
         if (cart.items == null) {
             cart.items = {}; }
@@ -48,7 +48,8 @@ const cart = {
             // image
 
             part = document.createElement("img");
-            part.src = "assets/" + "p-img";
+            part.src = "assets/" + p-img;
+            part.className = "p-img";
             item.appendChild(part);
 
             // name
@@ -76,14 +77,14 @@ const cart = {
             part = document.createElement("input");
             part.type = "button";
             part.value = "Want This Fruit";
-            part.className = "cartp-add";
+            part.className = "cart p-add";
             part.onclick = cart.add;
             part.dataset.id = id;
             item.appendChild(part);
         }
 
         // load cart from previous session ... kind of confused by this
-        cart.read();
+        cart.load();
 
         cart.list();
 
@@ -94,7 +95,7 @@ const cart = {
     list : () => {
 
         cart.current.innerHTML = "";
-        let item, part;
+        let item, part, pdt;
         let empty = true;
         for (let key in cart.items) {
             if(cart.items.hasOwnProperty(key)) { empty = false; break; }
@@ -103,7 +104,7 @@ const cart = {
         if (empty) {
             item = document.createElement("div");
             item.innerHTML = "Cart is empty";
-            cart.product.appendChild(item);
+            cart.items.appendChild(item);
         }
 
         // else list items
