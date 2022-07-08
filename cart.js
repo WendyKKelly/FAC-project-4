@@ -70,7 +70,7 @@ const cart = {
    // add to cart
    part = document.createElement("input");
    part.type = "button";
-   part.value = "Want Fruit?";
+   part.value = "Add to Cart";
    part.className = "cart p-add";
    part.onclick = cart.add;
    part.dataset.id = id;
