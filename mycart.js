@@ -16,12 +16,13 @@ const cart = {
         cart.items = localStorage.getItem("cart");
         if (cart.items == null) {
             cart.items = {}; }
-            else { cart.items = JSON.parse (cart.items);}
+            else { cart.items = JSON.parse(cart.items);}
         },
 
     nuke :  () => {
         if (confirm("Say Bye Bye to Fruit?")) {
-            cart.items = {};localStorage.removeItem("cart");
+            cart.items = {};
+            localStorage.removeItem("cart");
             cart.list();
         }
     },
@@ -119,15 +120,15 @@ const cart = {
                 cart.current.appendChild(item);
 
                 part = document.createElement("div");
-                part.innerHTML = p.img;
-                part.className = "p-img";
+                part.innerHTML = p.name;
+                part.className = "c-name";
                 item.appendChild(part);
 
                 part = document.createElement("input");
                 part.type = "button";
                 part.value = "X";
                 part.dataset.id = id;
-                part.className = "c-delcart";
+                part.className = "c-del cart";
                 part.addEventListener("click", cart.remove);
                 item.appendChild(part);
 
