@@ -8,32 +8,29 @@ const cart = {
     // local storage
     //  https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
-    save :  () => {
+    save : function () {
         localStorage.setItem("cart", JSON.stringify(cart.items));
       },
 
-      load : () => {
+      load : function () {
         cart.items = localStorage.getItem("cart");
-        if (cart.items == null) {
-            cart.items = {}; }
-            else { cart.items = JSON.parse(cart.items); }
-        },
+        if (cart.items == null) { cart.items = {}; }
+        else { cart.items = JSON.parse(cart.items); }
+      },
 
-    nuke :  () => {
-        if (confirm("Say Bye Bye to Fruit?")) {
-            cart.items = {};
-            localStorage.removeItem("cart");
-            cart.list();
-        }
+    nuke : function () {
+      if (confirm("Empty cart?")) {
+        cart.items = {};
+        localStorage.removeItem("cart");
+        cart.list();
+      }
     },
     // create 
 
-    init : () => {
-        // a little confused by this part
-
+    init : function () {
+        // (C1) GET HTML ELEMENTS
         cart.hPdt = document.getElementById("cart-products");
         cart.hItems = document.getElementById("cart-items");
-
         // create elements
 
         cart.hPdt.innerHTML = "";
