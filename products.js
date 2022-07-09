@@ -40,20 +40,24 @@ var products = {
     
   }
   
-  const form = document.getElementById("fruit");
+  const formElem = document.querySelector("fruit");
 
-form.addEventListener("submit", (e) => {
+formElem.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const myFormData = new FormData(e.target);
+   new FormData(formElem);
+   formElem.addEventListener('formdata', (e) => {
+    console.log('formdata fired');
 
-    const formDataObj = Object.fromEntries(myFormData.entries());
-
-    
-    console.log(formDataObj);
+    let data = e.formData;
+    for (let value of data.values()) {
+        console.log(value);
+    }
+   })
 
     // output data
-    const output = document.querySelector(".output-pre");
-    output.innerText = JSON.stringify(formDataObj, null, 2);
+    let request = new XMLHttpRequest();
+  request.open("POST", "/products");
+  request.send(data);
 });
 
