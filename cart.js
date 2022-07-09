@@ -123,6 +123,12 @@ list : function () {
      part.className = "c-name";
      item.appendChild(part);
 
+     // cart image
+     part = document.createElement("img");
+   part.src = "assets/" +p.img;
+   part.className = "p-img";
+   item.appendChild(part);
+
      // remove from cart
      part = document.createElement("input");
      part.type = "button";
