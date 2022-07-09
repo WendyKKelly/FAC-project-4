@@ -71,7 +71,7 @@ load : function () {
    // add to cart
    part = document.createElement("input");
    part.type = "button";
-   part.value = "Want Fruit?";
+   part.value = `Want Some ${p.name}?`;
    part.className = "cart p-add";
    part.onclick = cart.add;
    part.dataset.id = id;
