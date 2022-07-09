@@ -53,7 +53,7 @@ form.addEventListener("submit", (e) => {
     console.log(formDataObj);
 
     // output data
-    const output = document.querySelector(".cart-items");
+    const output = document.querySelector(".output-pre");
     output.innerText = JSON.stringify(formDataObj, null, 2);
 });
 
