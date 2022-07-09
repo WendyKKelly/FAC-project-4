@@ -36,4 +36,10 @@ var products = {
         img : "melon.jpg",
         price : 842
       }
+
+    
+  }
+  function addProducts(form) {
+    products[form.item.value] = {name: form.name.value, desc: form.desc.value, price: form.price.value};
+    return false;
   };

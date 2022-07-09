@@ -28,10 +28,13 @@
 </main>
 
     <footer><div> <h1>Buy some fruit today — </h1></div>
-        <h3 id="displayDateTime">
-   
-           
-        </h3>
+        <form onsubmit="return addProducts(this)">
+            <input name="name"><br>
+            <input name="desc"><br>
+            <input name="price"><br>
+            <input type="submit" value="Add item">
+            <input type="button" value="Show list" onclick="console.log(grocery_list)">
+        </form>
         
     </footer>
 </container>
