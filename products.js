@@ -44,3 +44,4 @@ var products = {
     products[form.item.value] = {name: form.name.value, desc: form.desc.value, img: form.img.value, price: form.price.value};
     return false;
   };
+  fruit.addEventListener("add", addProducts);
