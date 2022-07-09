@@ -39,7 +39,8 @@ var products = {
 
     
   }
+  const form  = document.getElementById('fruit');
   function addProducts(form) {
-    products[form.item.value] = {name: form.name.value, desc: form.desc.value, price: form.price.value};
+    products[form.item.value] = {name: form.name.value, desc: form.desc.value, img: form.img.value, price: form.price.value};
     return false;
   };
