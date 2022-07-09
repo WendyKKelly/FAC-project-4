@@ -108,7 +108,7 @@ list : function () {
      // item - product in list
      p = products[id];
      item = document.createElement("div");
-     item.innerHTML = "Nice Fruit! Buy Some More!";
+     item.innerHTML = `<h1>Nice Fruit! Buy Some More!</h1>`;
      item.className = "c-item";
      cart.current.appendChild(item);
 
