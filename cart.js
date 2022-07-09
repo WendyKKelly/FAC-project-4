@@ -97,7 +97,7 @@ list : function () {
  // empty cart to begin
  if (empty) {
    item = document.createElement("div");
-   item.innerHTML = "Buy Something! Add Fruit to Your Cart.";
+   item.innerHTML = `<h1>Buy Something! Add Fruit to Your Cart.</h1>`;
    cart.current.appendChild(item);
  }
 
@@ -106,7 +106,8 @@ list : function () {
     // set new header for non-empty cart
     item = document.createElement("div");
      item.innerHTML = `<h1>Nice Fruit! Buy Some More!</h1>`;
-     
+     cart.current.appendChild(item);
+
    let p, total = 0, subtotal = 0;
    for (let id in cart.items) {
 
