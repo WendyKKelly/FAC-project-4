@@ -1,4 +1,5 @@
  // omg you can put  functions as items inside an object
+ // thanks to codepen https://codepen.io/hellomev/pen/YzpxNvm
 
 const cart = {
     product : null, // products list
@@ -107,6 +108,7 @@ list : function () {
      // item - product in list
      p = products[id];
      item = document.createElement("div");
+     item.innerHTML = "Nice Fruit! Buy Some More!";
      item.className = "c-item";
      cart.current.appendChild(item);
 
