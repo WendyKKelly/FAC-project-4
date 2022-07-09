@@ -103,11 +103,13 @@ list : function () {
 
  // create list items in cart
  else {
-   let p, total = 0, subtotal = 0;
-   for (let id in cart.items) {
-// set new header for non-empty cart
+    // set new header for non-empty cart
     item = document.createElement("div");
      item.innerHTML = `<h1>Nice Fruit! Buy Some More!</h1>`;
+     
+   let p, total = 0, subtotal = 0;
+   for (let id in cart.items) {
+
      // item - product in list
      p = products[id];
      item = document.createElement("div");
