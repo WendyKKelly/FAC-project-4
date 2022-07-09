@@ -39,9 +39,21 @@ var products = {
 
     
   }
-  const form  = document.getElementById('fruit');
-  function addProducts(form) {
-    products[form.item.value] = {name: form.name.value, desc: form.desc.value, img: form.img.value, price: form.price.value};
-    return false;
-  };
-  fruit.addEventListener("add", addProducts);
+  
+  const form = document.getElementById("fruit");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const myFormData = new FormData(e.target);
+
+    const formDataObj = Object.fromEntries(myFormData.entries());
+
+    
+    console.log(formDataObj);
+
+    // output data
+    const output = document.querySelector(".cart-items");
+    output.innerText = JSON.stringify(formDataObj, null, 2);
+});
+
