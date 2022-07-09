@@ -33,20 +33,9 @@
             <input name="name"><br>
             <input name="desc"><br>
             <input name="price"><br>
-            <input type="submit" value="Add item" >
+            <input type="submit" value="Add item" onclick="cart.add">
             <input type="button" value="Show list" onclick="console.log(products)">
         </form>
-        <script>const button = document.querySelector('button');
-
-            button.addEventListener('click', event => {
-                if (item == undefined) {
-                    item = 1;
-                } else{
-                    item++;
-                }
-                }
-            );
-                </script>
         
     </footer>
 </container>
