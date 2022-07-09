@@ -57,7 +57,7 @@ formElem.addEventListener("submit", (e) => {
 
     // output data
     let request = new XMLHttpRequest();
-  request.open("POST", "/products");
+  request.open("GET", "/products");
   request.send(data);
 }
 });
