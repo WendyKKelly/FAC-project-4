@@ -40,24 +40,25 @@ var products = {
     
   }
   
-  const formElem = document.querySelector("fruit");
+  const formElem = document.querySelector("form");
 
 formElem.addEventListener("submit", (e) => {
     e.preventDefault();
 
    new FormData(formElem);
-   formElem.addEventListener('formdata', (e) => {
+   formElem.onformdata = (e) => {
     console.log('formdata fired');
 
     let data = e.formData;
     for (let value of data.values()) {
         console.log(value);
     }
-   })
+
 
     // output data
     let request = new XMLHttpRequest();
   request.open("POST", "/products");
   request.send(data);
+}
 });
 
