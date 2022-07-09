@@ -105,10 +105,12 @@ list : function () {
  else {
    let p, total = 0, subtotal = 0;
    for (let id in cart.items) {
+// set new header for non-empty cart
+    item = document.createElement("div");
+     item.innerHTML = `<h1>Nice Fruit! Buy Some More!</h1>`;
      // item - product in list
      p = products[id];
      item = document.createElement("div");
-     item.innerHTML = `<h1>Nice Fruit! Buy Some More!</h1>`;
      item.className = "c-item";
      cart.current.appendChild(item);
 
